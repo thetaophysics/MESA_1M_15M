@@ -1,0 +1,80 @@
+&pgstar
+  ! see star/defaults/pgstar.defaults
+
+  ! MESA uses PGPLOT for live plotting and gives the user a tremendous
+  ! amount of control of the presentation of the information.
+
+  ! show HR diagram
+  ! this plots the history of L,Teff over many timesteps
+    HR_win_flag = .true.
+
+  ! set static plot bounds
+    HR_logT_min = 3.5
+    HR_logT_max = 4.6
+    HR_logL_min = -2.0
+    HR_logL_max = 4.0
+
+  ! set window size (aspect_ratio = height/width)
+    HR_win_width = 6
+    HR_win_aspect_ratio = 1.0
+
+
+  ! show temperature/density profile
+  ! this plots the internal structure at single timestep
+    TRho_Profile_win_flag = .true.
+
+  ! add legend explaining colors
+    show_TRho_Profile_legend = .true.
+
+  ! display numerical info about the star
+    show_TRho_Profile_text_info = .true.
+
+  ! set window size (aspect_ratio = height/width)
+    TRho_Profile_win_width = 8
+    TRho_Profile_win_aspect_ratio = 0.75
+
+  ! Kipp diagram
+
+    file_white_on_black_flag = .true. ! white_on_black flags -- true means white foreground color on black background
+    file_device = 'png'            ! png
+    file_extension = 'png'
+  
+    !file_device = 'vcps'          ! postscript
+    !file_extension = 'ps'
+  
+     pgstar_interval = 10
+     file_digits = 8
+  
+  
+    Kipp_win_flag = .true.
+  
+    ! window properties
+    Kipp_win_width = 12
+    Kipp_win_aspect_ratio = 0.75
+    Kipp_txt_scale = 0.9
+    Kipp_title = ''
+  
+    ! y axis limits
+    Kipp_mass_max = 25.0
+    Kipp_mass_min = 0
+    Kipp_show_mass_boundaries = .true.
+  
+    ! x axis limits
+    Kipp_xaxis_name = 'model_number'
+    Kipp_xmax = -101              ! maximum step number.  negative means use default.
+    Kipp_xmin = 0         ! minimum step number.  negative means use default.
+  
+    Kipp_show_mixing = .true.
+    Kipp_show_burn = .true.
+    Kipp_show_luminosities = .true.
+  
+    ! file output
+    Kipp_file_flag = .true.
+    Kipp_file_dir = 'kipp_png'
+    Kipp_file_prefix = 'kipp_'
+    Kipp_file_interval = 10     ! output when mod(model_number,file_interval)==0
+    Kipp_file_width = 12        ! (inches) negative means use same value as for window
+    Kipp_file_aspect_ratio = -1 ! negative means use same value as for window
+  
+  / ! end of pgstar namelist
+/ ! end of pgstar namelist
